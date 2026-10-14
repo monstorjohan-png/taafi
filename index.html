@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تعافى — رفيقك الهادئ للإقلاع</title>
+<meta name="description" content="برنامج عملي هادئ من 90 يوم للإقلاع عن العادة السرية والإباحية: عداد، خطة طوارئ، عادات يومية، خصوصية كاملة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#FBFAF6; --surface:#ffffff; --surface2:#F3F0E7;
+--border:#E8E2D3; --border2:#D9D1BC;
+--text:#172723; --text-hi:#0C1A17; --muted:#6B766F;
+--accent:#0E7C6B; --accent-hover:#0A5F53; --accent-soft:#E2F0EC; --accent-fg:#fff;
+--gold:#A8740A; --gold-bg:#FFF4D9;
+--danger:#B3401E; --danger-bg:#FDEEE6;
+--r-sm:8px; --r-md:12px; --r-lg:18px; --r-full:999px;
+--shadow-sm:0 1px 2px rgba(23,39,35,.07);
+--shadow-md:0 10px 28px rgba(23,39,35,.09);
+--ease:cubic-bezier(.4,0,.2,1); --dur:.3s;
+--fs-sm:.9rem; --fs-base:1.02rem; --fs-lg:1.2rem; --fs-xl:1.55rem; --fs-2xl:2.1rem; --fs-3xl:3rem;
+}
+[data-theme="dark"]{--bg:#0D1312; --surface:#151D1B; --surface2:#1C2623; --border:#26322F; --border2:#33413C; --text:#DDE6E2; --text-hi:#fff; --muted:#9AABA4; --accent:#2FB49A; --accent-hover:#3ACAAE; --accent-soft:#14322C; --gold:#E5B93E; --gold-bg:#2A230F; --danger:#F0805A; --danger-bg:#2C1A12; --shadow-sm:0 1px 2px rgba(0,0,0,.4); --shadow-md:0 12px 32px rgba(0,0,0,.4)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"IBM Plex Sans Arabic",system-ui,Tahoma,sans-serif;background:var(--bg);color:var(--text);font-size:var(--fs-base);line-height:1.9}
+h1,h2,h3{color:var(--text-hi);line-height:1.4;margin:0 0 .6rem}
+h1{font-size:clamp(2rem,5vw,var(--fs-3xl));font-weight:700;letter-spacing:-.5px}
+h2{font-size:var(--fs-xl);font-weight:700}
+h3{font-size:var(--fs-lg);font-weight:600}
+p{margin:0 0 1rem;max-width:68ch}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.container{width:min(1100px,92%);margin-inline:auto}
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;font-weight:700;color:var(--text-hi);text-decoration:none;font-size:1.15rem}
+.mark{width:40px;height:40px;border-radius:12px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.3rem;box-shadow:var(--shadow-sm)}
+.navlinks{display:flex;gap:1.1rem;align-items:center}
+.navlinks a{text-decoration:none;color:var(--text);font-size:.95rem;transition:color var(--dur) var(--ease)}
+.navlinks a:hover{color:var(--accent)}
+.btn{appearance:none;border:1px solid var(--border);background:var(--surface);color:var(--text-hi);padding:.72rem 1.25rem;border-radius:var(--r-full);font:inherit;font-weight:600;cursor:pointer;transition:all var(--dur) var(--ease);text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;justify-content:center}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);border-color:var(--border2)}
+.btn:active{transform:translateY(0)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.btn.primary:hover{background:var(--accent-hover)}
+.btn.ghost{background:transparent}
+.btn.danger{background:var(--danger);border-color:var(--danger);color:#fff}
+.btn.large{padding:.95rem 1.7rem;font-size:1.05rem}
+.hero{padding:3.2rem 0 2rem;display:grid;gap:2rem;grid-template-columns:1fr}
+@media(min-width:960px){.hero{grid-template-columns:1.05fr .95fr;align-items:start;padding-top:4rem}}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent-soft);color:var(--accent-hover);border:1px solid var(--border);padding:.3rem .9rem;border-radius:var(--r-full);font-size:.85rem;font-weight:600}
+[data-theme="dark"] .eyebrow{color:var(--accent)}
+.lead{color:var(--muted);font-size:1.12rem}
+.hero-cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);padding:1.4rem}
+.counter-card{position:sticky;top:84px}
+.ring-wrap{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
+.ring{--p:0;width:132px;height:132px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--accent) calc(var(--p)*1%),var(--border) 0);padding:10px;flex:none}
+.ring>div{width:100%;height:100%;background:var(--surface);border-radius:50%;display:grid;place-items:center;text-align:center}
+.ring b{font-size:1.9rem;color:var(--text-hi);line-height:1}
+.ring small{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:1.1rem}
+.stat{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-md);padding:.7rem;text-align:center}
+.stat b{display:block;font-size:1.25rem;color:var(--text-hi)}
+.stat span{font-size:.82rem;color:var(--muted)}
+.row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+input,select,textarea{font:inherit;color:var(--text-hi);background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-md);padding:.7rem .9rem;width:100%}
+textarea{min-height:110px;resize:vertical;line-height:1.9}
+label{font-weight:600;font-size:.92rem;display:block;margin:.7rem 0 .35rem}
+section{padding:2.2rem 0}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.sec-head p{color:var(--muted);margin:0}
+.grid2{display:grid;gap:1rem}
+@media(min-width:800px){.grid2{grid-template-columns:1fr 1fr}}
+.grid3{display:grid;gap:1rem}
+@media(min-width:800px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.phase{position:relative;padding-inline-start:1rem}
+.phase::before{content:"";position:absolute;inset-inline-start:0;top:8px;bottom:8px;width:4px;border-radius:99px;background:var(--border)}
+.phase.done::before{background:var(--accent)}
+.phase h3{margin-bottom:.2rem}
+.tag{font-size:.78rem;background:var(--surface2);border:1px solid var(--border);padding:.15rem .6rem;border-radius:99px;color:var(--muted)}
+.habit{display:flex;align-items:center;gap:.8rem;padding:.75rem .8rem;border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface);cursor:pointer;transition:all var(--dur) var(--ease)}
+.habit:hover{border-color:var(--accent);box-shadow:var(--shadow-sm)}
+.habit input{width:20px;height:20px;accent-color:var(--accent);flex:none}
+.habit.done{background:var(--accent-soft);border-color:var(--accent)}
+.habit small{display:block;color:var(--muted);font-weight:400}
+.progress{height:10px;background:var(--surface2);border:1px solid var(--border);border-radius:99px;overflow:hidden}
+.progress>i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width var(--dur) var(--ease)}
+.sos{background:linear-gradient(180deg,var(--danger-bg),var(--surface));border:1px solid var(--border);border-radius:var(--r-lg);padding:1.5rem}
+.steps{counter-reset:s;display:grid;gap:.8rem;margin:1rem 0}
+.step{display:flex;gap:.9rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:.9rem}
+.step i{counter-increment:s;width:34px;height:34px;flex:none;border-radius:50%;background:var(--text-hi);color:var(--bg);display:grid;place-items:center;font-style:normal;font-weight:700}
+.step i::before{content:counter(s)}
+details{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:.9rem 1rem;margin-bottom:.6rem}
+summary{cursor:pointer;font-weight:700;color:var(--text-hi)}
+.tip{border-inline-start:4px solid var(--gold);background:var(--gold-bg);padding:.8rem 1rem;border-radius:8px}
+.kbd{font-size:.8rem;border:1px solid var(--border2);border-bottom-width:2px;border-radius:6px;padding:.05rem .45rem;background:var(--surface)}
+dialog{border:1px solid var(--border);border-radius:var(--r-lg);padding:0;max-width:min(560px,92vw);background:var(--surface);color:var(--text)}
+dialog::backdrop{background:rgba(0,0,0,.45);backdrop-filter:blur(3px)}
+.dlg-body{padding:1.5rem}
+.breath{width:120px;height:120px;margin:1rem auto;border-radius:50%;background:var(--accent-soft);border:2px solid var(--accent);display:grid;place-items:center;font-weight:700;color:var(--accent-hover);transition:transform 4s var(--ease)}
+footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--muted);font-size:.92rem}
+.toolbar{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.theme-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center}
+@media(max-width:640px){.navlinks a:not(.btn){display:none}.stats{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+<nav class="nav container" aria-label="التنقل">
+<a class="brand" href="#top"><span class="mark">ت</span> تعافى</a>
+<div class="navlinks">
+<a href="#program">البرنامج</a>
+<a href="#habits">العادات</a>
+<a href="#sos">زر الطوارئ</a>
+<a href="#after">بعد الانتكاسة</a>
+<a href="#faq">أسئلة</a>
+<button class="btn ghost theme-btn" id="themeBtn" aria-label="تبديل المظهر">◐</button>
+<a class="btn primary" href="#counter">ابدأ عدادك</a>
+</div>
+</nav>
+</header>
+
+<main id="top" class="container">
+<!-- HERO -->
+<div class="hero">
+<div>
+<span class="eyebrow">خصوصية كاملة • بياناتك على جهازك فقط</span>
+<h1>بطل ببساطة.<br>خطوة بخطوة نحو الحرية.</h1>
+<p class="lead">موقع عملي بلا وعظ ولا تخويف. برنامج 90 يوم مجرب: افهم المحفز، اهرب من الفخ، ابنِ يوما يشغلك، ولو وقعت قوم بدون جلد ذات.</p>
+<div class="hero-cta">
+<a class="btn primary large" href="#counter">احسب أيام تعافيك</a>
+<a class="btn large" href="#sos">عندي رغبة الآن — أنقذني</a>
+</div>
+<p style="margin-top:1rem;color:var(--muted);font-size:.92rem">مجاني، بدون حساب، بدون تتبع. يعمل أوفلاين بعد أول تحميل.</p>
+<div class="card" style="margin-top:1rem">
+<h3 style="margin-bottom:.4rem">لماذا يفشل أغلب الناس؟</h3>
+<p style="margin:0;color:var(--muted)">ليس ضعف إرادة. 3 فخاخ تتكرر: <b style="color:var(--text-hi)">الفراغ + السهر + الهاتف في الحمام/السرير.</b> البرنامج هنا مصمم لسد الثلاثة معا.</p>
+</div>
+</div>
+
+<!-- COUNTER -->
+<article class="card counter-card" id="counter" aria-label="عداد التعافي">
+<h2>عدادك الشخصي</h2>
+<p style="color:var(--muted);margin-top:0">اختر يوم البداية. كل شيء يُحفظ في متصفحك فقط.</p>
+<div class="ring-wrap">
+<div class="ring" id="ring" style="--p:0"><div><div><b id="days">0</b><br><small>يوم نظيف</small></div></div></div>
+<div style="flex:1;min-width:200px">
+<label for="startDate">يوم البداية</label>
+<input type="date" id="startDate">
+<div class="row">
+<button class="btn primary" id="saveStart">حفظ البداية</button>
+<button class="btn ghost" id="resetAll">تصفير</button>
+</div>
+</div>
+</div>
+<div class="stats">
+<div class="stat"><b id="sHours">0</b><span>ساعة حرية</span></div>
+<div class="stat"><b id="sBest">0</b><span>أطول سلسلة</span></div>
+<div class="stat"><b id="sRel">0</b><span>انتكاسات مسجلة</span></div>
+</div>
+<div class="row">
+<button class="btn" id="logClean">✔ يوم نظيف إضافي</button>
+<button class="btn danger" id="logRelapse">وقعت اليوم — سجل وابدأ من جديد</button>
+</div>
+<p id="msg" role="status" style="margin:.8rem 0 0;color:var(--accent-hover);font-weight:600"></p>
+</article>
+</div>
+
+<!-- PROGRAM -->
+<section id="program">
+<div class="sec-head"><div><h2>برنامج الـ 90 يوم المبسط</h2><p>3 مراحل. لا تفعل كل شيء معا. كل مرحلة لها مهمة واحدة.</p></div><span class="tag">مجرب: تقليل المحفزات + ملء الفراغ + إصلاح النوم</span></div>
+<div class="grid3">
+<article class="card phase" id="ph1"><span class="tag">يوم 1 – 14 • التنظيف</span><h3>اقطع الطريق</h3><p>احذف تطبيقا واحدا يوقعك، فعّل فلتر البحث الآمن، انقل الشاحن خارج غرفة النوم، لا تدخل الحمام بالهاتف، نم قبل 12.</p><ul><li>قاعدة الـ 10 دقائق: أي رغبة انتظر 10 دقائق وطبق خطة الطوارئ.</li><li>رياضة يومية 20 دقيقة حتى لو مشي.</li><li>لا اختبار نفسك: لا تفتح محتوى مثير فضولا.</li></ul></article>
+<article class="card phase" id="ph2"><span class="tag">يوم 15 – 45 • البناء</span><h3>املأ الفراغ</h3><p>الفراغ هو الوقود. ثبت 3 مواعيد ثابتة: عبادة/ذكر، تعلم أو شغل، رياضة. اخرج من البيت يوميا.</p><ul><li>اكتب محفزاتك: وحدة؟ قلق؟ سهر؟ ملل؟ وجهز بديلا لكل واحد.</li><li>صديق واحد تثق به أو مجتمع تعافٍ.</li><li>قلل سكر وكافيين مساء.</li></ul></article>
+<article class="card phase" id="ph3"><span class="tag">يوم 46 – 90 • الحرية</span><h3>احمِ المكسب</h3><p>ستشعر أنك شُفيت فتتهاون. هنا يقع الكثير. حافظ على القواعد نفسها + ساعد غيرك.</p><ul><li>راجع يومياتك أسبوعيا.</li><li>خطط للمناسبات الصعبة: سفر، امتحانات، خصام.</li><li>كافئ نفسك كل 30 يوم بشيء حقيقي.</li></ul></article>
+</div>
+</section>
+
+<!-- SOS -->
+<section id="sos">
+<div class="sos">
+<h2>زر الطوارئ — عندك رغبة الآن؟</h2>
+<p>لا تقاوم بالتفكير. قاوم بالحركة. نفذ الخطوات الخمس بالترتيب. أغلب الرغبات تنكسر بعد 7 دقائق.</p>
+<div class="steps">
+<div class="step"><i></i><div><b>قف الآن وغير مكانك.</b> اخرج من الغرفة. اغسل وجهك بماء بارد. لا تمسك الهاتف في السرير.</div></div>
+<div class="step"><i></i><div><b>تنفس 4-4-4:</b> شهيق 4 ثوان، احبس 4، زفير 4. كرر 5 مرات. <button class="btn" id="breathBtn">ابدأ تمرين التنفس 60 ثانية</button><div class="breath" id="breath">جاهز</div></div></div>
+<div class="step"><i></i><div><b>حركة 10 دقائق:</b> مشي سريع، ضغط، تنظيف الغرفة، وضوء وصلاة ركعتين. الجسم المشغول لا يشتهي.</div></div>
+<div class="step"><i></i><div><b>اتصل أو اشغل عقلك:</b> كلم صديقا، اسمع درسا، اكتب ما تشعر به في اليوميات بالأسفل لمدة 3 دقائق.</div></div>
+<div class="step"><i></i><div><b>لو ما زالت قوية:</b> أطفئ النت 30 دقيقة، اخرج للشارع أو اجلس مع أهلك، ونم مبكرا اليوم. لا تختبر نفسك.</div></div>
+</div>
+<div class="toolbar">
+<button class="btn primary large" id="iSurvived">✔ عديت الموجة — سجل نجاح</button>
+<span style="color:var(--muted)">عدد الموجات التي تجاوزتها: <b id="wins" style="color:var(--text-hi)">0</b></span>
+</div>
+</div>
+</section>
+
+<!-- HABITS -->
+<section id="habits">
+<div class="sec-head"><div><h2>عادات اليوم الثمانية</h2><p>علّم كل ليلة. التقدم اليومي أهم من الكمال. تُصفّر تلقائيا كل يوم.</p></div><span class="tag" id="habitPct">0%</span></div>
+<div class="progress" aria-hidden="true"><i id="habitBar" style="width:0%"></i></div>
+<div class="grid2" id="habitList" style="margin-top:1rem"></div>
+<div class="card" style="margin-top:1rem"><h3>حكمة اليوم</h3><p id="dailyTip" style="margin:0"></p></div>
+</section>
+
+<!-- TRIGGERS -->
+<section id="triggers">
+<div class="sec-head"><div><h2>خريطة الفخاخ والحلول</h2><p>اكتب فخك الخاص وجهز بديله مسبقا.</p></div></div>
+<div class="grid2">
+<article class="card"><h3>أشهر 7 محفزات</h3><ul><li><b>السهر بعد 12:</b> الحل: منبه نوم + شاحن خارج الغرفة.</li><li><b>الهاتف في الحمام:</b> الحل: ممنوع نهائيا، منبه ورقي.</li><li><b>الوحدة والملل:</b> الحل: قائمة 5 بدائل جاهزة.</li><li><b>التوتر والغضب:</b> الحل: رياضة + كتابة + وضوء.</li><li><b>التصفح العشوائي:</b> الحل: فلتر + حذف تطبيقات + وضع رمادي للشاشة ليلا.</li><li><b>الاختلاط المثير:</b> الحل: غض بصر + انشغال فوري.</li><li><b>الفراغ بعد الامتحانات:</b> الحل: مشروع صيفي / شغل تطوعي.</li></ul></article>
+<article class="card"><h3>يومياتي — 3 دقائق</h3><label for="journal">ماذا شعرت اليوم؟ ما الذي حفزك؟ ماذا ستفعل غدا؟</label><textarea id="journal" placeholder="اكتب هنا بصراحة... لا أحد يراك."></textarea><div class="row"><button class="btn primary" id="saveJournal">حفظ اليومية</button><button class="btn ghost" id="clearJournal">مسح</button></div><p id="jmsg" style="color:var(--muted);font-size:.9rem"></p></article>
+</div>
+</section>
+
+<!-- AFTER -->
+<section id="after">
+<div class="grid2">
+<article class="card"><h2>وقعت؟ هذا بروتوكول القيام</h2><p>الانتكاسة ليست النهاية. أخطر منها الاستسلام أسبوعا كاملا. نفذ هذا خلال 10 دقائق:</p><ol><li>استغفر وقم وتوضأ. لا تجلد ذاتك.</li><li>اكتب السبب في سطر واحد: سهر؟ هاتف؟ غضب؟</li><li>احذف الطريق الذي أوقعك الآن فورا.</li><li>ابدأ العداد من جديد. سلسلة جديدة.</li><li>نم مبكرا اليوم وعوض غدا برياضة.</li></ol><div class="tip">قاعدة ذهبية: <b>لا انتكاسة مزدوجة.</b> من يقع مرة ويكمل اليوم نظيفا يتعافى أسرع ممن يستسلم ويقول خلاص ضاعت.</div></article>
+<article class="card"><h2>عبادات تقويك فعليا</h2><ul><li>صيام الاثنين والخميس — يخفض الطاقة ويضبط النوم.</li><li>ورد ذكر ثابت + ركعتا قيام — يملأ فراغ الليل الأخطر.</li><li>دعاء محدد تكرره عند الرغبة.</li><li>صحبة مسجد أو حلقة أو فريق رياضي.</li></ul><h3>جسدك</h3><ul><li>نوم 7-8 ساعات، رياضة 30 دقيقة، تقليل سكر.</li><li>دش بارد عند الموجة القوية.</li><li>لا كحول ولا مخدرات — تضاعف الاندفاع.</li></ul></article>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+<h2>أسئلة تتكرر وإجابات صادقة</h2>
+<details open><summary>هل العادة تسبب العقم أو الضعف الدائم؟</summary><p>باعتدال لا. الخطر الحقيقي عند الإدمان: إرهاق نفسي، تأخر قذف أو ضعف انتصاب نفسي، وعزلة عن الزواج الحقيقي. كلها تتحسن بالتوقف أسابيع.</p></details>
+<details><summary>حاولت كثيرا وفشلت. هل أنا مدمن؟</summary><p>إذا تفقد السيطرة رغم الضرر الواضح وتحتاج محفزات أعنف، فأنت في نمط إدماني سلوكي. الحل ليس قوة إرادة فقط بل تغيير بيئة: نوم، هاتف، فراغ، صحبة. ولو استمر 6 أشهر رغم المحاولات الجادة استشر مختصا نفسيا.</p></details>
+<details><summary>هل الزواج هو الحل؟</summary><p>يساعد لكنه ليس علاجا سحريا. من يدمن وهو أعزب غالبا يحمل النمط للزواج. تعافَ الآن لتتزوج سليما.</p></details>
+<details><summary>كم أحتاج لأتعافى؟</summary><p>أغلب الناس يشعرون بفرق واضح بعد 21-30 يوما من الالتزام الكامل، واستقرار بعد 90 يوما. الدماغ يتعلم من جديد بالتكرار.</p></details>
+<details><summary>هل بياناتي آمنة؟</summary><p>نعم. كل شيء في <span class="kbd">localStorage</span> على جهازك. لا حساب ولا إرسال لأي خادم. امسح سجل المتصفح وستفقد بياناتك — وهذه هي الخصوصية الكاملة.</p></details>
+</section>
+
+<div class="card" style="margin-bottom:2.5rem;text-align:center">
+<h2>تعهد اليوم الواحد</h2>
+<p style="color:var(--muted)">لا تتعهد بالعمر كله. تعهد بـ 24 ساعة فقط. وكررها غدا.</p>
+<p style="font-size:1.3rem;font-weight:700;color:var(--text-hi)" id="oath">أتعهد اليوم فقط: لا عادة، لا إباحية، أنام مبكرا، وأتحرك عند الرغبة.</p>
+<button class="btn primary large" id="oathBtn">أتعهد بهذا اليوم</button>
+<p id="oathMsg" style="color:var(--accent-hover);font-weight:700"></p>
+</div>
+</main>
+
+<footer><div class="container" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap"><span>تعافى — صُنع لمساعدتك بصدق. ليس بديلا عن طبيب أو مختص نفسي عند الحاجة.</span><span>استخدمه يوميا 5 دقائق.</span></div></footer>
+
+<dialog id="winDlg"><div class="dlg-body" style="text-align:center"><h2>أحسنت. عديت الموجة.</h2><p>كل مرة تصمد فيها دماغك يتعلم أنك أقوى من الرغبة. سجلت لك نجاحا جديدا.</p><button class="btn primary" onclick="document.getElementById('winDlg').close()">استمر</button></div></dialog>
+
+<script>
+const $=id=>document.getElementById(id);
+const store={get(k,d){try{const v=localStorage.getItem('taafi_'+k);return v==null?d:JSON.parse(v)}catch{return d}},set(k,v){localStorage.setItem('taafi_'+k,JSON.stringify(v))}};
+const habits=[["صلاة/ذكر","وردك اليومي ولو 10 دقائق"],["رياضة 20 دقيقة","مشي أو تمارين بيت"],["لا هاتف في الحمام/السرير","أخطر قاعدتين"],["نوم قبل 12","اضبط منبه النوم"],["لا إباحية ولا مشاهد مثيرة","ولا اختبار فضول"],["عمل/تعلم ساعتان","املأ الفراغ"],["تواصل بشري","مكالمة أو خروج"],["يومية 3 دقائق","اكتب سطرا واحدا"]];
+function todayKey(){return new Date().toISOString().slice(0,10)}
+function load(){
+const s=store.get('start',null);if(s)$('startDate').value=s;
+$('wins').textContent=store.get('wins',0);
+$('journal').value=store.get('journal_'+todayKey(),'');
+renderHabits();tick();rotateTip();
+}
+function daysSince(){const s=store.get('start',null);if(!s)return 0;const d=(Date.now()-new Date(s+'T00:00').getTime())/864e5;return Math.max(0,Math.floor(d))}
+function tick(){
+const d=daysSince();$('days').textContent=d;$('sHours').textContent=d*24;
+$('sBest').textContent=Math.max(store.get('best',0),d);
+$('sRel').textContent=store.get('relapses',0);
+const p=Math.min(100,Math.round(d/90*100));$('ring').style.setProperty('--p',p);
+$('ph1').classList.toggle('done',d>=14);$('ph2').classList.toggle('done',d>=45);$('ph3').classList.toggle('done',d>=90);
+}
+$('saveStart').onclick=()=>{const v=$('startDate').value;if(!v){$('msg').textContent='اختر التاريخ أولا.';return}store.set('start',v);const b=store.get('best',0);store.set('best',Math.max(b,daysSince()));$('msg').textContent='تم. يومك الأول بدأ. ركز على 24 ساعة فقط.';tick()};
+$('resetAll').onclick=()=>{if(!confirm('تصفير كل بياناتك؟'))return;Object.keys(localStorage).filter(k=>k.startsWith('taafi_')).forEach(k=>localStorage.removeItem(k));location.reload()};
+$('logRelapse').onclick=()=>{const n=store.get('relapses',0)+1;store.set('relapses',n);const t=new Date().toISOString().slice(0,10);store.set('start',t);$('startDate').value=t;$('msg').textContent='وقعت؟ قم الآن. سجلنا انتكاسة رقم '+n+' وبدأنا سلسلة جديدة اليوم. لا انتكاسة مزدوجة.';tick();document.getElementById('after').scrollIntoView({behavior:'smooth'})};
+$('logClean').onclick=()=>{store.set('best',Math.max(store.get('best',0),daysSince()));$('msg').textContent='ممتاز. يوم نظيف آخر يضاف لرصيدك.'};
+function renderHabits(){
+const k='habits_'+todayKey();let v=store.get(k,Array(habits.length).fill(false));
+const box=$('habitList');box.innerHTML='';
+habits.forEach((h,i)=>{const l=document.createElement('label');l.className='habit'+(v[i]?' done':'');l.innerHTML=`<input type="checkbox" ${v[i]?'checked':''}><span><b>${h[0]}</b><small>${h[1]}</small></span>`;l.querySelector('input').onchange=e=>{v[i]=e.target.checked;store.set(k,v);renderHabits()};box.appendChild(l)});
+const pct=Math.round(v.filter(Boolean).length/v.length*100);$('habitPct').textContent=pct+'%';$('habitBar').style.width=pct+'%';
+}
+const tips=["الرغبة موجة 7 دقائق. من يتحرك ينجو، ومن يتفرج يغرق.","لا تقاوم في السرير. قاوم بقدميك: قف واخرج.","النوم المبكر نصف العلاج. السهر هو البوابة الأولى.","احذف الطريق لا تختبر إرادتك. الذكي يهرب من الفخ لا يقاومه داخله.","الفراغ وقود. من ملأ يومه لم يجد وقتا للسقوط.","لو وقعت مرة لا تكمل السقوط. القاعدة: أبدا انتكاستان متتاليتان.","اكتب محفزك بعد كل موجة. من يعرف فخه ينجو منه.","كافئ نفسك كل 30 يوما. دماغك يحتاج بديلا ممتعا حلالا."];
+function rotateTip(){$('dailyTip').textContent=tips[new Date().getDate()%tips.length]}
+$('saveJournal').onclick=()=>{store.set('journal_'+todayKey(),$('journal').value);$('jmsg').textContent='حُفظت يومية اليوم '+todayKey()};
+$('clearJournal').onclick=()=>{$('journal').value='';store.set('journal_'+todayKey(),'')};
+$('iSurvived').onclick=()=>{store.set('wins',store.get('wins',0)+1);$('wins').textContent=store.get('wins',0);$('winDlg').showModal()};
+$('breathBtn').onclick=()=>{const b=$('breath');let n=0;b.textContent='شهيق...';b.style.transform='scale(1.25)';const iv=setInterval(()=>{n++;if(n%2){b.textContent='زفير...';b.style.transform='scale(1)'}else{b.textContent='شهيق...';b.style.transform='scale(1.25)'}if(n>=8){clearInterval(iv);b.textContent='أحسنت';b.style.transform='scale(1)'}},4000)};
+$('oathBtn').onclick=()=>{store.set('oath_'+todayKey(),true);$('oathMsg').textContent='تم تسجيل تعهد اليوم '+todayKey()+'. ركز على اليوم فقط.'};
+if(store.get('oath_'+todayKey(),false))$('oathMsg').textContent='أنت متعهد اليوم. اثبت.';
+$('themeBtn').onclick=()=>{const h=document.documentElement;h.dataset.theme=h.dataset.theme==='dark'?'':'dark';store.set('theme',h.dataset.theme)};
+if(store.get('theme','')==='dark')document.documentElement.dataset.theme='dark';
+load();setInterval(tick,60000);
+</script>
+</body>
+</html>
