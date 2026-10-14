@@ -1,0 +1,19 @@
+{
+  "name": "تعافى — رفيقك الهادئ للإقلاع",
+  "short_name": "تعافى",
+  "description": "برنامج 90 يوم للإقلاع: عداد، خطة طوارئ، عادات يومية. يعمل بدون انترنت.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "dir": "rtl",
+  "lang": "ar",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0E7C6B",
+  "background_color": "#FBFAF6",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

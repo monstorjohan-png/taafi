@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>تعافى — رفيقك الهادئ للإقلاع</title>
 <meta name="description" content="برنامج عملي هادئ من 90 يوم للإقلاع عن العادة السرية والإباحية: عداد، خطة طوارئ، عادات يومية، خصوصية كاملة.">
+<meta name="theme-color" content="#0E7C6B">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="تعافى">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -120,6 +129,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--muted);font
 <a href="#after">بعد الانتكاسة</a>
 <a href="#faq">أسئلة</a>
 <button class="btn ghost theme-btn" id="themeBtn" aria-label="تبديل المظهر">◐</button>
+<button class="btn" id="installBtn" hidden>⬇ ثبّت التطبيق</button>
 <a class="btn primary" href="#counter">ابدأ عدادك</a>
 </div>
 </nav>
@@ -135,8 +145,9 @@ footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--muted);font
 <div class="hero-cta">
 <a class="btn primary large" href="#counter">احسب أيام تعافيك</a>
 <a class="btn large" href="#sos">عندي رغبة الآن — أنقذني</a>
+<button class="btn large" id="installBtn2" hidden>⬇ ثبّت كتطبيق بدون نت</button>
 </div>
-<p style="margin-top:1rem;color:var(--muted);font-size:.92rem">مجاني، بدون حساب، بدون تتبع. يعمل أوفلاين بعد أول تحميل.</p>
+<p style="margin-top:1rem;color:var(--muted);font-size:.92rem">مجاني، بدون حساب، بدون تتبع. <span id="offlineNote">يعمل أوفلاين بعد أول تحميل.</span></p>
 <div class="card" style="margin-top:1rem">
 <h3 style="margin-bottom:.4rem">لماذا يفشل أغلب الناس؟</h3>
 <p style="margin:0;color:var(--muted)">ليس ضعف إرادة. 3 فخاخ تتكرر: <b style="color:var(--text-hi)">الفراغ + السهر + الهاتف في الحمام/السرير.</b> البرنامج هنا مصمم لسد الثلاثة معا.</p>
@@ -233,6 +244,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--muted);font
 <details><summary>هل الزواج هو الحل؟</summary><p>يساعد لكنه ليس علاجا سحريا. من يدمن وهو أعزب غالبا يحمل النمط للزواج. تعافَ الآن لتتزوج سليما.</p></details>
 <details><summary>كم أحتاج لأتعافى؟</summary><p>أغلب الناس يشعرون بفرق واضح بعد 21-30 يوما من الالتزام الكامل، واستقرار بعد 90 يوما. الدماغ يتعلم من جديد بالتكرار.</p></details>
 <details><summary>هل بياناتي آمنة؟</summary><p>نعم. كل شيء في <span class="kbd">localStorage</span> على جهازك. لا حساب ولا إرسال لأي خادم. امسح سجل المتصفح وستفقد بياناتك — وهذه هي الخصوصية الكاملة.</p></details>
+<details><summary>كيف أثبته كتطبيق بدون نت؟</summary><p>افتح الموقع مرة واحدة بالنت ثم: على أندرويد (كروم): القائمة ⋮ ثم <b>تثبيت التطبيق</b>. على آيفون (سفاري): زر المشاركة ثم <b>إضافة إلى الشاشة الرئيسية</b>. بعدها يعمل العداد والعادات والطوارئ بدون نت.</p></details>
 </section>
 
 <div class="card" style="margin-bottom:2.5rem;text-align:center">
@@ -287,6 +299,14 @@ $('oathBtn').onclick=()=>{store.set('oath_'+todayKey(),true);$('oathMsg').textCo
 if(store.get('oath_'+todayKey(),false))$('oathMsg').textContent='أنت متعهد اليوم. اثبت.';
 $('themeBtn').onclick=()=>{const h=document.documentElement;h.dataset.theme=h.dataset.theme==='dark'?'':'dark';store.set('theme',h.dataset.theme)};
 if(store.get('theme','')==='dark')document.documentElement.dataset.theme='dark';
+let deferredPrompt=null;
+function showInstall(){['installBtn','installBtn2'].forEach(id=>{const b=$(id);if(b)b.hidden=false})}
+window.addEventListener('beforeinstallprompt',(e)=>{e.preventDefault();deferredPrompt=e;showInstall()});
+async function doInstall(){if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null}else{alert('من متصفح الهاتف: القائمة ⋮ ثم "تثبيت التطبيق" أو "إضافة إلى الشاشة الرئيسية".')}}
+['installBtn','installBtn2'].forEach(id=>{const b=$(id);if(b)b.onclick=doInstall});
+if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').then(()=>{const n=$('offlineNote');if(n)n.textContent='مثبت للعمل بدون نت. ثبّته من الزر أعلاه ليظهر كتطبيق.'}).catch(()=>{})})}
+function updNet(){const n=$('offlineNote');if(!n)return;if(!navigator.onLine)n.textContent='أنت بدون نت الآن — التطبيق يعمل كاملا.'}
+window.addEventListener('online',updNet);window.addEventListener('offline',updNet);updNet();
 load();setInterval(tick,60000);
 </script>
 </body>
